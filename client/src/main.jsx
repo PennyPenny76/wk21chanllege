@@ -5,6 +5,11 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 import App from './App.jsx'
 import SearchBooks from './pages/SearchBooks'
 import SavedBooks from './pages/SavedBooks'
+// import Auth from './utils/auth';
+// const userId = Auth.loggedIn() ? Auth.getProfile()._id : '';
+
+// console.log("userId:", userId)
+// console.log("username:", Auth.getProfile().username)
 
 const router = createBrowserRouter([
   {
@@ -16,7 +21,10 @@ const router = createBrowserRouter([
         index: true,
         element: <SearchBooks />
       }, {
-        path: '/saved',
+        path: '/saved/:_id}',
+        element: <SavedBooks />
+      }, {
+        path: '/me',
         element: <SavedBooks />
       }
     ]
